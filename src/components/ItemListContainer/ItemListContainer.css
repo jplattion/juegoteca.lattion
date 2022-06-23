@@ -1,0 +1,6 @@
+main {
+	background-image: url(./assets/backgroundMain.svg);
+	background-attachment: fixed;
+	font-family: "Fredoka", Arial, Helvetica, sans-serif;
+	height: 80vh;
+}

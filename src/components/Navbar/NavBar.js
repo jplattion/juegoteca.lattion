@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import "./NavBar.css";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import CartWidget from "../CartWidget/CartWidget";
 import logo from "./assets/logo.png";
 
 const NavBar = () => {
@@ -20,7 +20,7 @@ const NavBar = () => {
 							<Nav.Link href="#juegos!">Juegos</Nav.Link>
 							<Nav.Link href="#contacto!">Contacto</Nav.Link>
 						</Nav>
-						<ShoppingCartIcon className="shoppingCart" />
+						<CartWidget />
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>
