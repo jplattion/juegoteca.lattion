@@ -2,5 +2,11 @@ main {
 	background-image: url(./assets/backgroundMain.svg);
 	background-attachment: fixed;
 	font-family: "Fredoka", Arial, Helvetica, sans-serif;
-	height: 80vh;
+	height: 100vh;
+}
+
+main > h1 {
+	padding: 2rem 0 2rem 0;
+	text-transform: uppercase;
+	justify-content: center;
 }
