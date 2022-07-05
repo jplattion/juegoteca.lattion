@@ -1,5 +1,6 @@
-import NavBar from "./components/Navbar/NavBar";
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import NavBar from "./components/NavBar";
+import ItemListContainer from "./containers/ItemListContainer";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import "./App.css";
 
 function App() {

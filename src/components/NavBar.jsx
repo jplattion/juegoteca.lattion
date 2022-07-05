@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import "./NavBar.css";
-import CartWidget from "../CartWidget/CartWidget";
+import CartWidget from "./CartWidget";
 import logo from "./assets/logo.png";
 
 const NavBar = () => {
