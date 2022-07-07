@@ -1,6 +1,6 @@
 import React from "react";
-import ItemList from "./ItemList";
-import backgroundMain from "./assets/backgroundMain.svg";
+import ItemList from "../ItemList/ItemList";
+import backgroundMain from "../../assets/backgroundMain.svg";
 
 const ItemListContainer = ({ greeting }) => {
 	return (
@@ -23,7 +23,6 @@ const styles = {
 		backgroundAttachment: "fixed",
 		fontFamily: '"Fredoka", Arial, Helvetica, sans-serif',
 		height: "100%",
-		minHeight: "100vh",
 	},
 
 	h1: {

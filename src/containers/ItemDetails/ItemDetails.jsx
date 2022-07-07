@@ -1,8 +1,8 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import ItemCount from "../components/ItemCount";
+import ItemCount from "../../components/ItemCount/ItemCount";
 
-function Item(props) {
+function ItemDetails(props) {
 	const onAdd = () => {
 		alert(`Gracias por tu compra`);
 	};
@@ -10,30 +10,35 @@ function Item(props) {
 		<>
 			<Card style={styles.card}>
 				<Card.Title style={styles.cardTitle}> {props.title} </Card.Title>
-				<Card.Img variant="top" src={props.pictureUrl} style={styles.cardImage} />
-				<Card.Body>
-					<Card.Text style={styles.cardId}> ID: {props.id}</Card.Text>
-					<Card.Text style={styles.cardDescription}> {props.description} </Card.Text>
-					<Card.Text style={styles.cardPrice}> $ {props.price} </Card.Text>
-					<div style={styles.container}>
-						<button style={styles.btn}>Detalles</button>
-						<ItemCount stock={props.stock} onAdd={onAdd} />
-					</div>
-				</Card.Body>
+				<div style={styles.row}>
+					<Card.Img variant="top" src={props.pictureUrl} style={styles.cardImage} />
+					<Card.Body>
+						<Card.Text style={styles.cardId}> ID: {props.id}</Card.Text>
+						<Card.Text style={styles.cardDescription}> {props.description} </Card.Text>
+						<Card.Text style={styles.cardPrice}> $ {props.price} </Card.Text>
+						<div>
+							<ItemCount stock={props.stock} onAdd={onAdd} />
+						</div>
+					</Card.Body>
+				</div>
 			</Card>
 		</>
 	);
 }
 
-export default Item;
+export default ItemDetails;
 
 const styles = {
+	row: {
+		display: "flex",
+		flexDirection: "row",
+	},
 	card: {
-		width: "16rem",
+		width: "600px",
 		backgroundColor: "#999999",
-		margin: "0 auto",
+		margin: "auto",
 		marginTop: "1rem",
-		height: "550px",
+		height: "350px",
 	},
 	cardTitle: {
 		marginTop: "0.5rem",
@@ -48,7 +53,7 @@ const styles = {
 		height: "200px",
 		width: "auto",
 		maxWidth: "100%",
-		margin: "auto",
+		margin: "1rem",
 	},
 	cardId: {
 		margin: "auto",
@@ -59,11 +64,6 @@ const styles = {
 	},
 	cardPrice: {
 		textAlign: "center",
-	},
-	container: {
-		position: "absolute",
-		bottom: "0",
-		paddingBottom: "1rem",
 	},
 	btn: {
 		display: "flex",

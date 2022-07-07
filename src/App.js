@@ -1,6 +1,6 @@
-import NavBar from "./components/NavBar";
-import ItemListContainer from "./containers/ItemListContainer";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import NavBar from "./components/NavBar/NavBar";
+import ItemListContainer from "./containers/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./containers/ItemDetailcontainer/ItemDetailContainer";
 import "./App.css";
 
 function App() {
@@ -8,6 +8,7 @@ function App() {
 		<>
 			<NavBar />
 			<ItemListContainer greeting="Bienvenidos a Dados y Meeples" />
+			<ItemDetailContainer greeting="Detalle del producto" />
 		</>
 	);
 }

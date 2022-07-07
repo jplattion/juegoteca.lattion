@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Item from "./Item";
-import Spinner from "./Spinner";
+import ItemDetails from "../ItemDetails/ItemDetails";
+import backgroundMain from "../../assets/backgroundMain.svg";
+import Spinner from "../spinner/Spinner";
 
 const juegos = [
 	{
@@ -47,12 +48,12 @@ const promesa = new Promise((res, rej) => {
 	}, 2000);
 });
 
-function ItemList() {
+const ItemDetailContainer = ({ greeting }) => {
 	const [juegos, setJuegos] = useState([]);
 	const [show, setShow] = useState(true);
 
 	const mapJuego = juegos.map((juego) => (
-		<Item
+		<ItemDetails
 			key={juego.id}
 			id={juego.id}
 			title={juego.title}
@@ -79,18 +80,30 @@ function ItemList() {
 
 	return (
 		<>
-			<div className="row">{show ? <Spinner /> : mapJuego};</div>
+			<main style={styles.main}>
+				<h1 className="d-flex" style={styles.h1}>
+					{greeting}
+				</h1>
+				<div> {show ? <Spinner /> : mapJuego[0]}</div>
+			</main>
 		</>
 	);
-}
+};
 
-export default ItemList;
+export default ItemDetailContainer;
 
-// const styles = {
-// 	spinner: {
-// 		flex: 1,
-// 		marginTop: 240,
-// 		justifyContent: "center",
-// 		alignItems: "center",
-// 	},
-// };
+const styles = {
+	main: {
+		backgroundImage: `url(${backgroundMain})`,
+		backgroundAttachment: "fixed",
+		fontFamily: '"Fredoka", Arial, Helvetica, sans-serif',
+		height: "100%",
+		minHeight: "100vh",
+	},
+
+	h1: {
+		padding: "2rem 0 2rem 0",
+		textTransform: "uppercase",
+		justifyContent: "center",
+	},
+};
