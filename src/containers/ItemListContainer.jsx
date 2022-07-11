@@ -41,7 +41,7 @@ const styles = {
 		backgroundImage: `url(${backgroundMain})`,
 		backgroundAttachment: "fixed",
 		fontFamily: '"Fredoka", Arial, Helvetica, sans-serif',
-		height: "100%",
+		height: `100%`,
 	},
 
 	h1: {
