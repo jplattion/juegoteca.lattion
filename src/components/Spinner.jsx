@@ -1,13 +1,13 @@
 import React from "react";
 import PacmanLoader from "react-spinners/PacmanLoader";
 
-function Spinner() {
+const Spinner = () => {
   return (
     <>
       <PacmanLoader color="#008000" size={50} style={styles.spinner} />
     </>
   );
-}
+};
 
 export default Spinner;
 
