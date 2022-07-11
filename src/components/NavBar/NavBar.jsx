@@ -1,26 +1,40 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import "./NavBar.css";
-import CartWidget from "../CartWidget/CartWidget";
+import CartWidget from "../CartWidget";
 import logo from "../../assets/logo.png";
+import { Link, NavLink } from "react-router-dom";
+import "./NavBar.css";
 
 const NavBar = () => {
+	const categories = [
+		{ name: "electronics", id: 0, route: "/category/electronics" },
+		{ name: "jewelery", id: 1, route: "/category/jewelery" },
+		{ name: "men's clothing", id: 2, route: "/category/men's clothing" },
+		{ name: "women's clothing", id: 3, route: "/category/women's clothing" },
+	];
+
 	return (
 		<>
-			<Navbar expand="md" className="containerProject" sticky="top">
+			<Navbar expand="lg" className="containerProject" sticky="top">
 				<Container fluid>
-					<Navbar.Brand href="#" className="title">
-						<img src={logo} alt="logo" className="logo" />
-						Dados y Meeples
+					<Navbar.Brand>
+						<Link to="/" className="title">
+							<img src={logo} alt="logo" className="logo" />
+							Dados y Meeples
+						</Link>
 					</Navbar.Brand>
 					<Navbar.Toggle aria-controls="navbarScroll" />
 					<Navbar.Collapse id="navbarScroll">
 						<Nav className="ms-auto my-2 my-md-0" navbarScroll>
-							<Nav.Link href="#inicio!">Inicio</Nav.Link>
-							<Nav.Link href="#juegos!">Juegos</Nav.Link>
-							<Nav.Link href="#contacto!">Contacto</Nav.Link>
+							{categories.map((category) => (
+								<NavLink className="nav-link" key={category.id} to={category.route}>
+									{category.name}
+								</NavLink>
+							))}
+							<Link to="/cart">
+								<CartWidget />
+							</Link>
 						</Nav>
-						<CartWidget />
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>

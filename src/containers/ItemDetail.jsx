@@ -1,30 +1,30 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import ItemCount from "../../components/ItemCount/ItemCount";
+import ItemCount from "../components/ItemCount";
 
-function ItemDetails(props) {
+const ItemDetails = ({ product }) => {
 	const onAdd = () => {
 		alert(`Gracias por tu compra`);
 	};
 	return (
 		<>
 			<Card style={styles.card}>
-				<Card.Title style={styles.cardTitle}> {props.title} </Card.Title>
+				<Card.Title style={styles.cardTitle}> {product.title} </Card.Title>
 				<div style={styles.row}>
-					<Card.Img variant="top" src={props.pictureUrl} style={styles.cardImage} />
+					<Card.Img variant="top" src={product.image} style={styles.cardImage} />
 					<Card.Body>
-						<Card.Text style={styles.cardId}> ID: {props.id}</Card.Text>
-						<Card.Text style={styles.cardDescription}> {props.description} </Card.Text>
-						<Card.Text style={styles.cardPrice}> $ {props.price} </Card.Text>
+						<Card.Text style={styles.cardId}> ID: {product.id}</Card.Text>
+						<Card.Text style={styles.cardDescription}> {product.description} </Card.Text>
+						<Card.Text style={styles.cardPrice}> $ {product.price} </Card.Text>
 						<div>
-							<ItemCount stock={props.stock} onAdd={onAdd} />
+							<ItemCount stock={12} onAdd={onAdd} />
 						</div>
 					</Card.Body>
 				</div>
 			</Card>
 		</>
 	);
-}
+};
 
 export default ItemDetails;
 
@@ -38,7 +38,6 @@ const styles = {
 		backgroundColor: "#999999",
 		margin: "auto",
 		marginTop: "1rem",
-		height: "350px",
 	},
 	cardTitle: {
 		marginTop: "0.5rem",
